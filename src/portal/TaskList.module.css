@@ -8,7 +8,7 @@
 .list { display: flex; flex-direction: column; gap: 8px; }
 .row { display: flex; align-items: center; justify-content: space-between; background: #ffffff; padding: 16px 20px; border-radius: 12px; text-decoration: none; border: 1px solid #e5e7eb; gap: 16px; flex-wrap: wrap; transition: all 0.2s; }
 .row:hover { border-color: #6d28d9; box-shadow: 0 2px 12px rgba(109,40,217,0.1); }
-.rowLeft strong { display: block; font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.rowLeft strong { display: block; font-size: 15px; font-weight: 600; color: #0f0a1e; margin-bottom: 3px; }
 .rowLeft span { font-size: 12px; color: #6b7280; }
 .rowRight { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .date { font-size: 12px; color: #6b7280; }

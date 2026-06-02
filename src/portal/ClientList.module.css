@@ -1,6 +1,6 @@
 .page { max-width: 1100px; }
 .pageHeader { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px; gap: 16px; }
-.pageHeader h1 { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.pageHeader h1 { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; color: #0f0a1e; margin-bottom: 4px; }
 .pageHeader p { font-size: 13px; color: #6b7280; }
 
 .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
@@ -19,7 +19,7 @@
 .clearSearch { position: absolute; right: 12px; background: none; border: none; cursor: pointer; color: #6b7280; font-size: 13px; padding: 2px; line-height: 1; }
 .clearSearch:hover { color: #0f0a1e; }
 
-.tableWrap { background: #ffffff; border-radius: 18px; border: 1px solid #e5e7eb; overflow: hidden; }
+.tableWrap { background: #fff; border-radius: 18px; border: 1px solid #e5e7eb; overflow: hidden; }
 .table { width: 100%; border-collapse: collapse; }
 .table thead tr { background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
 .table th { padding: 12px 20px; font-size: 12px; font-weight: 700; color: #6b7280; text-align: left; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
@@ -61,14 +61,14 @@
 .dangerBtn:hover:not(:disabled) { border-color: #dc2626; background: #fee2e2; }
 
 .empty { color: #6b7280; font-size: 14px; padding: 40px; text-align: center; }
-.emptyState { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 64px 40px; background: #ffffff; border-radius: 18px; border: 1px solid #e5e7eb; color: #6b7280; }
+.emptyState { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 64px 40px; background: #fff; border-radius: 18px; border: 1px solid #e5e7eb; color: #6b7280; }
 .emptyState span { font-size: 40px; }
 .emptyState p { font-size: 15px; }
 
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 24px; backdrop-filter: blur(2px); }
 .modal { background: #ffffff; border-radius: 20px; padding: 36px; max-width: 420px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
 .modalIcon { font-size: 40px; margin-bottom: 16px; }
-.modal h3 { font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.modal h3 { font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 800; color: #0f0a1e; margin-bottom: 12px; }
 .modal p { font-size: 14px; color: #6b7280; line-height: 1.7; margin-bottom: 28px; }
 .modal p strong { color: #0f0a1e; }
 .modalActions { display: flex; gap: 10px; }
