@@ -17,7 +17,7 @@
   padding: 9px 12px;
   border-radius: 8px;
   transition: background 0.15s;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.75);
   margin-bottom: 4px;
   text-align: left;
 }
@@ -49,7 +49,7 @@
   left: 268px;
   bottom: 90px;
   width: 320px;
-  background: #16122e;
+  background: #231e42;
   border-radius: 16px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255,255,255,0.07);
@@ -68,7 +68,7 @@
 .dropTitle {
   font-size: 14px;
   font-weight: 700;
-  color: #f0eeff;
+  color: #ffffff;
 }
 
 .markAllBtn {
@@ -116,7 +116,7 @@
 }
 
 .unread {
-  background: #0f0d1f;
+  background: #0c0a1e;
 }
 
 .dot {
@@ -137,7 +137,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: #f0eeff;
+  color: #ffffff;
   margin-bottom: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -146,12 +146,12 @@
 
 .itemContent span {
   font-size: 11px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.75);
 }
 
 .empty {
   padding: 32px;
   text-align: center;
   font-size: 13px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.75);
 }

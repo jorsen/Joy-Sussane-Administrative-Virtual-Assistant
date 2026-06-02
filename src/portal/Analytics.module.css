@@ -11,18 +11,18 @@
   font-family: 'Sora', sans-serif;
   font-size: 26px;
   font-weight: 800;
-  color: #f0eeff;
+  color: #ffffff;
   margin-bottom: 6px;
 }
 
 .pageHeader p {
   font-size: 14px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
 }
 
 /* ── Section card ─────────────────────────────────────────── */
 .section {
-  background: #16122e;
+  background: #231e42;
   border: 1px solid rgba(255,255,255,0.07);
   border-radius: 18px;
   padding: 24px;
@@ -33,7 +33,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: #f0eeff;
+  color: #ffffff;
   margin-bottom: 18px;
 }
 
@@ -51,7 +51,7 @@
 
 .barLabel {
   font-size: 13px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
   min-width: 140px;
   flex-shrink: 0;
   white-space: nowrap;
@@ -61,7 +61,7 @@
 
 .barTrack {
   flex: 1;
-  background: #1e1a38;
+  background: #231e42;
   border-radius: 100px;
   height: 10px;
   overflow: hidden;
@@ -77,7 +77,7 @@
 
 .barCount {
   font-size: 12px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
   min-width: 28px;
   text-align: right;
   flex-shrink: 0;
@@ -91,7 +91,7 @@
 }
 
 .totalCard {
-  background: #0f0d1f;
+  background: #0c0a1e;
   border-radius: 14px;
   padding: 20px 16px;
   text-align: center;
@@ -112,13 +112,13 @@
 
 .totalLabel {
   font-size: 13px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
   font-weight: 500;
 }
 
 /* ── States ───────────────────────────────────────────────── */
 .loading {
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
   padding: 40px;
 }
 
@@ -130,7 +130,7 @@
 
 .empty {
   font-size: 14px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.75);
   text-align: center;
   padding: 24px 0;
 }

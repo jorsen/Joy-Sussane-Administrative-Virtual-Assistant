@@ -19,7 +19,7 @@
 .logo span { color: #6d28d9; }
 
 .roleTag {
-  font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.3);
+  font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.75);
   text-transform: uppercase; letter-spacing: 0.12em;
   margin-bottom: 20px;
 }
@@ -28,7 +28,7 @@
   display: flex; align-items: center; gap: 8px;
   width: 100%; padding: 9px 12px; margin-bottom: 16px;
   background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 8px; color: rgba(255,255,255,0.35); font-size: 13px;
+  border-radius: 8px; color: rgba(255,255,255,0.75); font-size: 13px;
   cursor: pointer; transition: all 0.15s; text-align: left;
 }
 .searchBtn:hover { border-color: rgba(109,40,217,0.5); color: rgba(255,255,255,0.7); background: rgba(109,40,217,0.08); }
@@ -42,7 +42,7 @@
 .nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .link {
   display: block; padding: 9px 12px; border-radius: 8px;
-  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.5);
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75);
   text-decoration: none; transition: all 0.15s;
 }
 .link:hover { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); }
@@ -52,7 +52,7 @@
 .themeToggle {
   width: 100%; padding: 8px 12px; background: none;
   border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
-  color: rgba(255,255,255,0.3); font-size: 12px;
+  color: rgba(255,255,255,0.75); font-size: 12px;
   cursor: pointer; transition: all 0.15s; text-align: left; margin-bottom: 4px;
 }
 .themeToggle:hover { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); }
@@ -68,12 +68,12 @@
   font-weight: 700; font-size: 13px; flex-shrink: 0;
 }
 .userInfo strong { display: block; font-size: 12px; color: #fff; font-weight: 600; }
-.userInfo span { font-size: 11px; color: rgba(255,255,255,0.35); word-break: break-all; }
+.userInfo span { font-size: 11px; color: rgba(255,255,255,0.75); word-break: break-all; }
 
 .logout {
   margin-top: 6px; padding: 8px 12px;
   border: 1px solid rgba(255,255,255,0.08); background: none;
-  border-radius: 8px; color: rgba(255,255,255,0.3); font-size: 12px;
+  border-radius: 8px; color: rgba(255,255,255,0.75); font-size: 12px;
   cursor: pointer; transition: all 0.15s;
 }
 .logout:hover { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.25); color: #f87171; }
@@ -82,7 +82,7 @@
 .main {
   flex: 1; padding: 36px 40px;
   overflow-y: auto; min-width: 0;
-  background: #0f0d1f;
+  background: #0c0a1e;
 }
 
 @media (max-width: 768px) {
