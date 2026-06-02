@@ -10,14 +10,14 @@
   gap: 8px;
   width: 100%;
   background: none;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid #e5e7eb;
   cursor: pointer;
   font-size: 14px;
   position: relative;
   padding: 9px 12px;
   border-radius: 8px;
   transition: background 0.15s;
-  color: rgba(255,255,255,0.5);
+  color: #9ca3af;
   margin-bottom: 4px;
   text-align: left;
 }
@@ -68,12 +68,12 @@
 .dropTitle {
   font-size: 14px;
   font-weight: 700;
-  color: #042f2e;
+  color: #0f0a1e;
 }
 
 .markAllBtn {
   font-size: 12px;
-  color: #0d9488;
+  color: #6d28d9;
   background: none;
   border: none;
   cursor: pointer;
@@ -107,7 +107,7 @@
 
 .item:focus-visible {
   background: #faf8ff;
-  outline: 2px solid #0d9488;
+  outline: 2px solid #6d28d9;
   outline-offset: -2px;
 }
 
@@ -116,14 +116,14 @@
 }
 
 .unread {
-  background: #f0fdfa;
+  background: #f9fafb;
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #0d9488;
+  background: #6d28d9;
   flex-shrink: 0;
   margin-top: 5px;
 }
@@ -137,7 +137,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: #042f2e;
+  color: #0f0a1e;
   margin-bottom: 2px;
   white-space: nowrap;
   overflow: hidden;

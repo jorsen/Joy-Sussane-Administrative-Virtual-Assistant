@@ -11,7 +11,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 26px;
   font-weight: 800;
-  color: #042f2e;
+  color: #0f0a1e;
   margin-bottom: 6px;
 }
 
@@ -33,7 +33,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: #042f2e;
+  color: #0f0a1e;
   margin-bottom: 18px;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .barFill {
-  background: linear-gradient(90deg, #0d9488, #0f766e);
+  background: linear-gradient(90deg, #6d28d9, #5b21b6);
   border-radius: 100px;
   height: 10px;
   transition: width 0.6s ease;
@@ -91,7 +91,7 @@
 }
 
 .totalCard {
-  background: #f0fdfa;
+  background: #f9fafb;
   border-radius: 14px;
   padding: 20px 16px;
   text-align: center;
@@ -101,7 +101,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 32px;
   font-weight: 800;
-  color: #0d9488;
+  color: #6d28d9;
   line-height: 1;
   margin-bottom: 8px;
 }
