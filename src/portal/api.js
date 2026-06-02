@@ -33,17 +33,17 @@ export const api = {
   getStats: () => req('GET', '/admin/stats'),
 
   uploadFile: async (file) => {
-    const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
-    const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
-    const formData = new FormData()
-    formData.append('file', file)
-    formData.append('upload_preset', uploadPreset)
-    const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/auto/upload`, {
+    const token = localStorage.getItem('token')
+    const res = await fetch(`/api/upload?filename=${encodeURIComponent(file.name)}`, {
       method: 'POST',
-      body: formData,
+      headers: {
+        'Content-Type': file.type || 'application/octet-stream',
+        Authorization: `Bearer ${token}`,
+      },
+      body: file,
     })
     const data = await res.json()
-    if (!res.ok) throw new Error(data.error?.message || 'Upload failed')
-    return { url: data.secure_url, name: file.name, size: String(file.size) }
+    if (!res.ok) throw new Error(data.error || 'Upload failed')
+    return data
   },
 }

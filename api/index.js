@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
+import { put } from '@vercel/blob'
 import { Resend } from 'resend'
 import sql from './db.js'
 import { auth, adminOnly } from './middleware.js'
@@ -11,6 +12,19 @@ app.use(cors())
 app.use(express.json())
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
+
+// ── FILE UPLOAD ────────────────────────────────────────
+app.post('/api/upload', auth, async (req, res) => {
+  try {
+    const filename = req.query.filename || 'upload'
+    const size = req.headers['content-length']
+    const blob = await put(`tasks/${filename}`, req, {
+      access: 'public',
+      contentType: req.headers['content-type'] || 'application/octet-stream',
+    })
+    res.json({ url: blob.url, name: filename, size: size || null })
+  } catch (err) { res.status(500).json({ error: err.message }) }
+})
 
 // ── AUTH ──────────────────────────────────────────────
 app.post('/api/auth/login', async (req, res) => {
