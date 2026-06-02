@@ -31,4 +31,19 @@ export const api = {
 
   getClients: () => req('GET', '/admin/clients'),
   getStats: () => req('GET', '/admin/stats'),
+
+  uploadFile: async (file) => {
+    const token = localStorage.getItem('token')
+    const res = await fetch(`/api/upload?filename=${encodeURIComponent(file.name)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': file.type || 'application/octet-stream',
+        Authorization: `Bearer ${token}`,
+      },
+      body: file,
+    })
+    const data = await res.json()
+    if (!res.ok) throw new Error(data.error || 'Upload failed')
+    return data
+  },
 }
