@@ -36,21 +36,13 @@ export default function TaskDetail() {
   const [activityOpen, setActivityOpen] = useState(true)
 
   useEffect(() => {
-    Promise.all([
-      api.getTask(id),
-      api.getMessages(id),
-      api.getFiles(id),
-      api.getNotes(id),
-      api.getActivity(id),
-    ])
-      .then(([t, m, f, n, a]) => {
-        setTask(t)
-        setMessages(m)
-        setFiles(f)
-        setNotes(n)
-        setActivity(a)
-      })
+    // Core data — task fails = nothing to show
+    Promise.all([api.getTask(id), api.getMessages(id), api.getFiles(id)])
+      .then(([t, m, f]) => { setTask(t); setMessages(m); setFiles(f) })
       .finally(() => setLoading(false))
+    // Secondary data — fail silently if tables don't exist yet
+    api.getNotes(id).then(setNotes).catch(() => {})
+    api.getActivity(id).then(setActivity).catch(() => {})
   }, [id])
 
   useEffect(() => { msgEnd.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages])
