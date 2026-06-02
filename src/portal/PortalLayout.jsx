@@ -15,6 +15,7 @@ export default function PortalLayout({ children }) {
     ? [
         { to: '/admin', label: '📊 Dashboard', end: true },
         { to: '/admin/tasks', label: '✅ All Tasks' },
+        { to: '/admin/calendar', label: '📅 Calendar' },
         { to: '/admin/clients', label: '👥 Clients' },
       ]
     : [
