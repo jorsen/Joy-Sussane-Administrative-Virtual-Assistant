@@ -17,7 +17,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 26px;
   font-weight: 800;
-  color: #0f0a1e;
+  color: #042f2e;
   margin-bottom: 4px;
 }
 
@@ -28,7 +28,7 @@
 
 .newBtn {
   padding: 11px 22px;
-  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  background: linear-gradient(135deg, #0d9488, #0f766e);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -43,7 +43,7 @@
 
 .newBtn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(109, 40, 217, 0.35);
+  box-shadow: 0 4px 16px rgba(13, 148, 136, 0.35);
 }
 
 /* ── Toolbar ──────────────────────────────────────────────────────────────── */
@@ -71,11 +71,11 @@
   font-family: 'Inter', sans-serif;
 }
 
-.filter:hover { border-color: #6d28d9; color: #6d28d9; background: #f8f7ff; }
+.filter:hover { border-color: #0d9488; color: #0d9488; background: #f0fdfa; }
 
 .filterActive {
-  background: #6d28d9;
-  border-color: #6d28d9;
+  background: #0d9488;
+  border-color: #0d9488;
   color: #fff;
 }
 
@@ -114,14 +114,14 @@
   border-bottom: 1px solid #f3f4f6;
   vertical-align: middle;
   font-size: 14px;
-  color: #0f0a1e;
+  color: #042f2e;
 }
 
 .table tbody tr:last-child td { border-bottom: none; }
 
 .table tbody tr { transition: background 0.15s; }
 
-.table tbody tr:hover { background: #faf8ff; }
+.table tbody tr:hover { background: #f0fdfa; }
 
 /* ── Cell helpers ─────────────────────────────────────────────────────────── */
 .clientCell {
@@ -134,7 +134,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  background: linear-gradient(135deg, #0d9488, #0f766e);
   color: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -147,7 +147,7 @@
 .clientName {
   font-weight: 600;
   font-size: 14px;
-  color: #0f0a1e;
+  color: #042f2e;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -164,7 +164,7 @@
 .amount {
   font-weight: 700;
   font-size: 15px;
-  color: #0f0a1e;
+  color: #042f2e;
   white-space: nowrap;
 }
 
@@ -203,7 +203,7 @@
   flex-shrink: 0;
 }
 
-.iconBtn:hover { border-color: #6d28d9; color: #6d28d9; background: #f8f7ff; }
+.iconBtn:hover { border-color: #0d9488; color: #0d9488; background: #f0fdfa; }
 
 .iconBtnGreen { border-color: #bbf7d0; color: #15803d; background: #f0fdf4; }
 .iconBtnGreen:hover { border-color: #15803d; background: #dcfce7; color: #15803d; }
@@ -255,7 +255,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 20px;
   font-weight: 800;
-  color: #0f0a1e;
+  color: #042f2e;
   margin-bottom: 24px;
 }
 
@@ -273,7 +273,7 @@
 .formGroup label {
   font-size: 13px;
   font-weight: 600;
-  color: #0f0a1e;
+  color: #042f2e;
   font-family: 'Inter', sans-serif;
 }
 
@@ -291,8 +291,8 @@
   border-radius: 10px;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
-  color: #0f0a1e;
-  background: #f8f7ff;
+  color: #042f2e;
+  background: #f0fdfa;
   outline: none;
   resize: vertical;
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
@@ -303,9 +303,9 @@
 .formGroup input:focus,
 .formGroup select:focus,
 .formGroup textarea:focus {
-  border-color: #6d28d9;
+  border-color: #0d9488;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }
 
 .formGroup input::placeholder,
@@ -343,7 +343,7 @@
   padding: 12px;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  background: linear-gradient(135deg, #0d9488, #0f766e);
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -354,7 +354,7 @@
 
 .saveBtn:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(109, 40, 217, 0.4);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
 }
 
 .saveBtn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }

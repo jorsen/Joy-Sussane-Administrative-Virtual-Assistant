@@ -1,43 +1,43 @@
 .page { max-width: 1000px; }
 .loading { color: #6b7280; padding: 40px; }
-.back { font-size: 13px; color: #6d28d9; text-decoration: none; display: block; margin-bottom: 24px; }
+.back { font-size: 13px; color: #0d9488; text-decoration: none; display: block; margin-bottom: 24px; }
 .back:hover { text-decoration: underline; }
 .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
-.top h1 { font-family:'Sora',sans-serif; font-size: 24px; font-weight: 800; color: #0f0a1e; margin-bottom: 10px; }
+.top h1 { font-family:'Sora',sans-serif; font-size: 24px; font-weight: 800; color: #042f2e; margin-bottom: 10px; }
 .meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.serviceTag { font-size: 12px; color: #6d28d9; background: #ede9fd; padding: 3px 10px; border-radius: 100px; font-weight: 600; }
+.serviceTag { font-size: 12px; color: #0d9488; background: #ccfbf1; padding: 3px 10px; border-radius: 100px; font-weight: 600; }
 .client { font-size: 12px; color: #6b7280; }
 .statusControls { display: flex; gap: 6px; flex-wrap: wrap; }
 .statusBtn { padding: 6px 12px; border: 1.5px solid #e5e7eb; border-radius: 8px; font-size: 12px; font-weight: 600; background: #fff; cursor: pointer; text-transform: capitalize; transition: all 0.2s; color: #6b7280; }
-.statusBtn:hover { border-color: #6d28d9; color: #6d28d9; }
-.activeStatus { background: #6d28d9; border-color: #6d28d9; color: #fff; }
+.statusBtn:hover { border-color: #0d9488; color: #0d9488; }
+.activeStatus { background: #0d9488; border-color: #0d9488; color: #fff; }
 .desc { font-size: 15px; color: #374151; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 28px; line-height: 1.7; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .card { background: #fff; border-radius: 16px; border: 1px solid #e5e7eb; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
-.card h3 { font-size: 16px; font-weight: 700; color: #0f0a1e; }
+.card h3 { font-size: 16px; font-weight: 700; color: #042f2e; }
 .messages { flex: 1; max-height: 360px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 8px; }
 .msg { display: flex; flex-direction: column; gap: 4px; }
 .mine { align-items: flex-end; }
-.msgBubble { background: #f8f7ff; padding: 10px 14px; border-radius: 12px 12px 12px 4px; font-size: 14px; color: #0f0a1e; max-width: 85%; }
-.mine .msgBubble { background: #6d28d9; color: #fff; border-radius: 12px 12px 4px 12px; }
+.msgBubble { background: #f0fdfa; padding: 10px 14px; border-radius: 12px 12px 12px 4px; font-size: 14px; color: #042f2e; max-width: 85%; }
+.mine .msgBubble { background: #0d9488; color: #fff; border-radius: 12px 12px 4px 12px; }
 .msgMeta { font-size: 11px; color: #9ca3af; }
 .msgForm { display: flex; gap: 8px; }
 .msgForm input { flex: 1; padding: 10px 14px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: 14px; outline: none; }
-.msgForm input:focus { border-color: #6d28d9; }
-.msgForm button { padding: 10px 18px; background: #6d28d9; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
+.msgForm input:focus { border-color: #0d9488; }
+.msgForm button { padding: 10px 18px; background: #0d9488; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
 .empty { font-size: 13px; color: #9ca3af; }
 .fileList { display: flex; flex-direction: column; gap: 8px; }
-.fileItem { display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8f7ff; border-radius: 10px; text-decoration: none; transition: background 0.2s; }
-.fileItem:hover { background: #ede9fd; }
+.fileItem { display: flex; align-items: center; gap: 12px; padding: 12px; background: #f0fdfa; border-radius: 10px; text-decoration: none; transition: background 0.2s; }
+.fileItem:hover { background: #ccfbf1; }
 .fileItem span { font-size: 22px; }
-.fileItem strong { display: block; font-size: 14px; color: #0f0a1e; }
+.fileItem strong { display: block; font-size: 14px; color: #042f2e; }
 .fileItem div > span { font-size: 11px; color: #9ca3af; }
 .fileForm { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #e5e7eb; padding-top: 16px; }
 .fileForm input { padding: 10px 14px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: 14px; outline: none; }
-.fileForm input:focus { border-color: #6d28d9; }
-.fileForm button { padding: 10px; background: #6d28d9; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
+.fileForm input:focus { border-color: #0d9488; }
+.fileForm button { padding: 10px; background: #0d9488; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
 /* ICS export button in meta row */
-.icsBtn { font-size: 12px; color: #6d28d9; background: #ede9fd; border: none; padding: 3px 10px; border-radius: 100px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+.icsBtn { font-size: 12px; color: #0d9488; background: #ccfbf1; border: none; padding: 3px 10px; border-radius: 100px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
 .icsBtn:hover { background: #ddd6fe; }
 
 /* Notes card */
@@ -50,13 +50,13 @@
 .deleteNoteBtn:hover { text-decoration: underline; }
 .noteForm { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #e5e7eb; padding-top: 16px; }
 .noteForm textarea { padding: 10px 14px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: 14px; outline: none; resize: vertical; font-family: inherit; }
-.noteForm textarea:focus { border-color: #6d28d9; }
-.noteForm button { padding: 10px; background: #6d28d9; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
+.noteForm textarea:focus { border-color: #0d9488; }
+.noteForm button { padding: 10px; background: #0d9488; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
 .noteForm button:disabled { opacity: 0.6; cursor: not-allowed; }
 
 /* Activity log card */
 .activityCard { margin-top: 24px; }
-.activityToggle { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; cursor: pointer; padding: 0; font-size: 16px; font-weight: 700; color: #0f0a1e; }
+.activityToggle { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; cursor: pointer; padding: 0; font-size: 16px; font-weight: 700; color: #042f2e; }
 .toggleChevron { font-size: 12px; color: #6b7280; }
 .timeline { display: flex; flex-direction: column; gap: 0; padding-top: 4px; }
 .timelineItem { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f3f4f6; }

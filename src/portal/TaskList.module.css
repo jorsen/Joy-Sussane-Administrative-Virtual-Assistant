@@ -1,14 +1,14 @@
 .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
-.header h1 { font-family:'Sora',sans-serif; font-size: 24px; font-weight: 800; color: #0f0a1e; }
-.newBtn { background: linear-gradient(135deg,#6d28d9,#7c3aed); color: #fff; padding: 10px 18px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.header h1 { font-family:'Sora',sans-serif; font-size: 24px; font-weight: 800; color: #042f2e; }
+.newBtn { background: linear-gradient(135deg,#0d9488,#0f766e); color: #fff; padding: 10px 18px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; }
 .filters { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
 .filter { padding: 7px 16px; border: 1.5px solid #e5e7eb; border-radius: 100px; background: #fff; font-size: 13px; font-weight: 600; color: #6b7280; cursor: pointer; transition: all 0.2s; text-transform: capitalize; }
-.filter:hover { border-color: #6d28d9; color: #6d28d9; }
-.active { background: #6d28d9; border-color: #6d28d9; color: #fff; }
+.filter:hover { border-color: #0d9488; color: #0d9488; }
+.active { background: #0d9488; border-color: #0d9488; color: #fff; }
 .list { display: flex; flex-direction: column; gap: 8px; }
 .row { display: flex; align-items: center; justify-content: space-between; background: #fff; padding: 16px 20px; border-radius: 12px; text-decoration: none; border: 1px solid #e5e7eb; gap: 16px; flex-wrap: wrap; transition: all 0.2s; }
-.row:hover { border-color: #6d28d9; box-shadow: 0 2px 12px rgba(109,40,217,0.1); }
-.rowLeft strong { display: block; font-size: 15px; font-weight: 600; color: #0f0a1e; margin-bottom: 3px; }
+.row:hover { border-color: #0d9488; box-shadow: 0 2px 12px rgba(13,148,136,0.1); }
+.rowLeft strong { display: block; font-size: 15px; font-weight: 600; color: #042f2e; margin-bottom: 3px; }
 .rowLeft span { font-size: 12px; color: #6b7280; }
 .rowRight { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .date { font-size: 12px; color: #9ca3af; }
