@@ -33,6 +33,8 @@ app.post('/api/auth/login', async (req, res) => {
     const [user] = await sql`SELECT * FROM users WHERE email = ${email}`
     if (!user) return res.status(401).json({ error: 'Invalid credentials' })
 
+    if (user.is_active === false) return res.status(403).json({ error: 'Account deactivated. Please contact support.' })
+
     const valid = await bcrypt.compare(password, user.password_hash)
     if (!valid) return res.status(401).json({ error: 'Invalid credentials' })
 
@@ -200,7 +202,7 @@ app.post('/api/tasks/:id/files', auth, async (req, res) => {
 app.get('/api/admin/clients', auth, adminOnly, async (req, res) => {
   try {
     const clients = await sql`
-      SELECT u.id, u.name, u.email, u.company, u.created_at,
+      SELECT u.id, u.name, u.email, u.company, u.created_at, u.is_active,
         COUNT(t.id) as task_count,
         SUM(CASE WHEN t.status = 'completed' THEN 1 ELSE 0 END) as completed_count
       FROM users u
@@ -209,6 +211,27 @@ app.get('/api/admin/clients', auth, adminOnly, async (req, res) => {
       GROUP BY u.id ORDER BY u.created_at DESC
     `
     res.json(clients)
+  } catch (err) { res.status(500).json({ error: err.message }) }
+})
+
+app.patch('/api/admin/clients/:id/status', auth, adminOnly, async (req, res) => {
+  try {
+    const { is_active } = req.body
+    const [user] = await sql`
+      UPDATE users SET is_active = ${is_active} WHERE id = ${req.params.id} AND role = 'client'
+      RETURNING id, name, email, is_active
+    `
+    if (!user) return res.status(404).json({ error: 'Client not found' })
+    res.json(user)
+  } catch (err) { res.status(500).json({ error: err.message }) }
+})
+
+app.delete('/api/admin/clients/:id', auth, adminOnly, async (req, res) => {
+  try {
+    const [user] = await sql`SELECT id FROM users WHERE id = ${req.params.id} AND role = 'client'`
+    if (!user) return res.status(404).json({ error: 'Client not found' })
+    await sql`DELETE FROM users WHERE id = ${req.params.id}`
+    res.json({ success: true })
   } catch (err) { res.status(500).json({ error: err.message }) }
 })
 

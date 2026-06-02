@@ -30,6 +30,8 @@ export const api = {
   addFile: (taskId, data) => req('POST', `/tasks/${taskId}/files`, data),
 
   getClients: () => req('GET', '/admin/clients'),
+  setClientStatus: (id, isActive) => req('PATCH', `/admin/clients/${id}/status`, { is_active: isActive }),
+  deleteClient: (id) => req('DELETE', `/admin/clients/${id}`),
   getStats: () => req('GET', '/admin/stats'),
 
   uploadFile: async (file) => {
