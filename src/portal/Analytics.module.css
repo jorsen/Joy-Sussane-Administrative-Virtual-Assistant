@@ -23,7 +23,7 @@
 /* ── Section card ─────────────────────────────────────────── */
 .section {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #ede9fd;
   border-radius: 18px;
   padding: 24px;
   margin-bottom: 24px;
@@ -91,7 +91,7 @@
 }
 
 .totalCard {
-  background: #f9fafb;
+  background: #f4f0ff;
   border-radius: 14px;
   padding: 20px 16px;
   text-align: center;

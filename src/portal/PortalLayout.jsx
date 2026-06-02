@@ -5,10 +5,25 @@ import styles from './PortalLayout.module.css'
 import NotificationBell from './NotificationBell'
 import SearchModal from './SearchModal'
 
+const adminNav = [
+  { to: '/admin', label: 'Dashboard', icon: '🏠', end: true },
+  { to: '/admin/tasks', label: 'All Tasks', icon: '✅' },
+  { to: '/admin/calendar', label: 'Calendar', icon: '📅' },
+  { to: '/admin/clients', label: 'Clients', icon: '👥' },
+  { to: '/admin/analytics', label: 'Analytics', icon: '📈' },
+  { to: '/admin/invoices', label: 'Invoices', icon: '🧾' },
+]
+
+const clientNav = [
+  { to: '/portal', label: 'Dashboard', icon: '🏠', end: true },
+  { to: '/portal/tasks', label: 'My Tasks', icon: '✅' },
+  { to: '/portal/tasks/new', label: 'New Request', icon: '➕' },
+  { to: '/portal/invoices', label: 'Invoices', icon: '🧾' },
+]
+
 export default function PortalLayout({ children }) {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
-
   const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark')
   const [searchOpen, setSearchOpen] = useState(false)
 
@@ -23,62 +38,75 @@ export default function PortalLayout({ children }) {
   }, [])
 
   useEffect(() => {
-    function handleKeyDown(e) {
-      if (e.ctrlKey && e.key === 'k') {
-        e.preventDefault()
-        setSearchOpen(true)
-      }
+    function onKey(e) {
+      if (e.ctrlKey && e.key === 'k') { e.preventDefault(); setSearchOpen(true) }
     }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  function handleLogout() {
-    logout()
-    navigate('/login')
-  }
-
-  const navItems = user?.role === 'admin'
-    ? [
-        { to: '/admin', label: '📊 Dashboard', end: true },
-        { to: '/admin/tasks', label: '✅ All Tasks' },
-        { to: '/admin/calendar', label: '📅 Calendar' },
-        { to: '/admin/clients', label: '👥 Clients' },
-        { to: '/admin/analytics', label: '📈 Analytics' },
-        { to: '/admin/invoices', label: '🧾 Invoices' },
-      ]
-    : [
-        { to: '/portal', label: '🏠 Dashboard', end: true },
-        { to: '/portal/tasks', label: '✅ My Tasks' },
-        { to: '/portal/tasks/new', label: '➕ New Request' },
-        { to: '/portal/invoices', label: '🧾 Invoices' },
-      ]
+  const navItems = user?.role === 'admin' ? adminNav : clientNav
 
   return (
     <div className={styles.layout}>
+      {/* Sidebar */}
       <aside className={styles.sidebar}>
-        <div className={styles.logo}>Joy<span>.</span></div>
-        <button className={styles.searchBtn} onClick={() => setSearchOpen(true)}>🔍 Search <kbd>Ctrl+K</kbd></button>
-        <p className={styles.roleTag}>{user?.role === 'admin' ? '⚡ Admin' : '👤 Client Portal'}</p>
+        <div className={styles.sidebarTop}>
+          <div className={styles.logo}>Joy<span>.</span></div>
+          <div className={styles.userCard}>
+            <div className={styles.avatar}>{user?.name?.[0]}</div>
+            <div>
+              <strong>{user?.name}</strong>
+              <span>{user?.role === 'admin' ? 'Admin' : 'Client'}</span>
+            </div>
+            <span className={styles.verifiedIcon}>✓</span>
+          </div>
+        </div>
+
         <nav className={styles.nav}>
-          {navItems.map(({ to, label, end }) => (
-            <NavLink key={to} to={to} end={end} className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>
-              {label}
+          <span className={styles.navLabel}>Main Menu</span>
+          {navItems.map(({ to, label, icon, end }) => (
+            <NavLink
+              key={to} to={to} end={end}
+              className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+            >
+              <span>{label}</span>
+              <span className={styles.linkIcon}>{icon}</span>
             </NavLink>
           ))}
         </nav>
-        <NotificationBell />
-        <button className={styles.themeToggle} onClick={() => setDark(d => !d)}>{dark ? '☀️ Light Mode' : '🌙 Dark Mode'}</button>
-        <div className={styles.userInfo}>
-          <div className={styles.avatar}>{user?.name?.[0]}</div>
-          <div>
-            <strong>{user?.name}</strong>
-            <span>{user?.email}</span>
-          </div>
+
+        <div className={styles.sidebarBottom}>
+          <NotificationBell />
+          <button className={styles.themeToggle} onClick={() => setDark(d => !d)}>
+            {dark ? '☀️ Light Mode' : '🌙 Dark Mode'}
+          </button>
+          <button className={styles.logout} onClick={() => { logout(); navigate('/login') }}>
+            Sign Out
+          </button>
         </div>
-        <button className={styles.logout} onClick={handleLogout}>Sign Out</button>
       </aside>
-      <main className={styles.main}>{children}</main>
+
+      {/* Right side */}
+      <div className={styles.rightSide}>
+        {/* Top header */}
+        <header className={styles.header}>
+          <button className={styles.headerSearch} onClick={() => setSearchOpen(true)}>
+            🔍 Search tasks...
+            <kbd>Ctrl+K</kbd>
+          </button>
+          <div className={styles.headerRight}>
+            <div className={styles.headerUser}>
+              <div className={styles.headerAvatar}>{user?.name?.[0]}</div>
+              {user?.name}
+            </div>
+          </div>
+        </header>
+
+        {/* Page content */}
+        <main className={styles.main}>{children}</main>
+      </div>
+
       <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
     </div>
   )

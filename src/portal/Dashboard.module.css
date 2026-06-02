@@ -8,20 +8,16 @@
 .newBtn { background: linear-gradient(135deg, #6d28d9, #5b21b6); color: #fff; padding: 11px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: all 0.2s; }
 .newBtn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(109,40,217,0.35); }
 
-.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
-.stat { background: #fff; border-radius: 18px; padding: 22px 24px; border: 1px solid #e5e7eb; display: flex; flex-direction: column; gap: 6px; position: relative; overflow: hidden; transition: box-shadow 0.2s; }
-.stat:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-.statIcon { font-size: 22px; margin-bottom: 4px; }
-.stat strong { font-family: 'Sora', sans-serif; font-size: 34px; font-weight: 800; color: #0f0a1e; line-height: 1; }
-.stat span { font-size: 13px; color: #6b7280; font-weight: 500; }
-.statPurple::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(135deg, #6d28d9, #5b21b6); border-radius: 4px 0 0 4px; }
-.statYellow::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #f59e0b; border-radius: 4px 0 0 4px; }
-.statBlue::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #3b82f6; border-radius: 4px 0 0 4px; }
-.statGreen::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #22c55e; border-radius: 4px 0 0 4px; }
-.statPurple strong { color: #6d28d9; }
-.statYellow strong { color: #d97706; }
-.statBlue strong { color: #2563eb; }
-.statGreen strong { color: #16a34a; }
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 28px; }
+.stat { border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; color: #fff; }
+.stat:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
+.statIcon { font-size: 28px; position: absolute; right: 20px; top: 20px; opacity: 0.7; }
+.stat strong { font-family: 'Sora', sans-serif; font-size: 36px; font-weight: 800; color: #fff; line-height: 1; }
+.stat span { font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 500; }
+.statPurple { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.statYellow { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.statBlue { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.statGreen { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
 
 .alertRow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
 .alertCard { border-radius: 14px; padding: 18px 20px; }
@@ -39,7 +35,7 @@
 .alertMore { font-size: 12px; color: #6b7280; padding-left: 12px; }
 
 .twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.section { background: #fff; border-radius: 18px; border: 1px solid #e5e7eb; padding: 24px; }
+.section { background: #fff; border-radius: 18px; border: 1px solid #ede9fd; padding: 24px; box-shadow: 0 2px 12px rgba(109,40,217,0.05); }
 .sectionHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
 .sectionHeader h2 { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; color: #0f0a1e; }
 .seeAll { font-size: 13px; color: #6d28d9; text-decoration: none; font-weight: 600; }
