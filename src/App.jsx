@@ -27,6 +27,8 @@ import TaskDetail from './portal/TaskDetail'
 import NewTask from './portal/NewTask'
 import ClientList from './portal/ClientList'
 import Calendar from './portal/Calendar'
+import Analytics from './portal/Analytics'
+import Invoices from './portal/Invoices'
 
 function LandingPage() {
   return (
@@ -94,6 +96,15 @@ export default function App() {
           } />
           <Route path="/admin/clients" element={
             <ProtectedRoute adminOnly><PortalLayout><ClientList /></PortalLayout></ProtectedRoute>
+          } />
+          <Route path="/admin/analytics" element={
+            <ProtectedRoute adminOnly><PortalLayout><Analytics /></PortalLayout></ProtectedRoute>
+          } />
+          <Route path="/admin/invoices" element={
+            <ProtectedRoute adminOnly><PortalLayout><Invoices /></PortalLayout></ProtectedRoute>
+          } />
+          <Route path="/portal/invoices" element={
+            <ProtectedRoute><PortalLayout><Invoices /></PortalLayout></ProtectedRoute>
           } />
         </Routes>
       </BrowserRouter>

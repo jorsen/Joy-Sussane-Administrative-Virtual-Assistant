@@ -25,4 +25,13 @@
 .fileSize { font-size: 12px; color: #9ca3af; flex-shrink: 0; }
 .fileRemove { background: none; border: none; cursor: pointer; color: #9ca3af; font-size: 13px; padding: 2px 4px; line-height: 1; flex-shrink: 0; transition: color 0.15s; }
 .fileRemove:hover { color: #ef4444; }
+.templatesBar { background: #fff; border-radius: 16px; border: 1px solid #e9d5ff; padding: 16px 20px; margin-bottom: 20px; }
+.templatesHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.templatesLabel { font-size: 13px; font-weight: 700; color: #6d28d9; }
+.templatesDismiss { background: none; border: none; cursor: pointer; color: #9ca3af; font-size: 14px; padding: 2px; }
+.templateCards { display: flex; gap: 8px; flex-wrap: wrap; }
+.templateCard { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1.5px solid #e5e7eb; border-radius: 100px; background: #f8f7ff; font-size: 13px; font-weight: 600; color: #374151; cursor: pointer; transition: all 0.2s; }
+.templateCard:hover { border-color: #6d28d9; color: #6d28d9; background: #f3e8ff; }
+.templateIcon { font-size: 16px; }
+.templateLabel { white-space: nowrap; }
 @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }

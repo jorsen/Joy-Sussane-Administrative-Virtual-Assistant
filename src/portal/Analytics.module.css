@@ -1,0 +1,147 @@
+/* ── Page shell ───────────────────────────────────────────── */
+.page {
+  max-width: 860px;
+}
+
+.pageHeader {
+  margin-bottom: 28px;
+}
+
+.pageHeader h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f0a1e;
+  margin-bottom: 6px;
+}
+
+.pageHeader p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ── Section card ─────────────────────────────────────────── */
+.section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f0a1e;
+  margin-bottom: 18px;
+}
+
+/* ── Bar chart rows ───────────────────────────────────────── */
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.barRow:last-child {
+  margin-bottom: 0;
+}
+
+.barLabel {
+  font-size: 13px;
+  color: #6b7280;
+  min-width: 140px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.barTrack {
+  flex: 1;
+  background: #f3f4f6;
+  border-radius: 100px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.barFill {
+  background: linear-gradient(90deg, #6d28d9, #7c3aed);
+  border-radius: 100px;
+  height: 10px;
+  transition: width 0.6s ease;
+  min-width: 4px;
+}
+
+.barCount {
+  font-size: 12px;
+  color: #6b7280;
+  min-width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Task Overview grid ───────────────────────────────────── */
+.totalsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.totalCard {
+  background: #f8f7ff;
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.totalNum {
+  font-family: 'Sora', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #6d28d9;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.numPending  { color: #d97706; }
+.numProgress { color: #2563eb; }
+.numCompleted { color: #16a34a; }
+
+.totalLabel {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ── States ───────────────────────────────────────────────── */
+.loading {
+  color: #6b7280;
+  padding: 40px;
+}
+
+.error {
+  color: #dc2626;
+  padding: 40px;
+  font-size: 14px;
+}
+
+.empty {
+  font-size: 14px;
+  color: #9ca3af;
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .totalsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .barLabel {
+    min-width: 100px;
+  }
+}

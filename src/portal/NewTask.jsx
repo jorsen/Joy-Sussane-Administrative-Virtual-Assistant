@@ -5,6 +5,15 @@ import styles from './NewTask.module.css'
 
 const services = ['Web Research','Social Media Management','Website Management','Admin & Data Entry','Email & Calendar Support','Payment & Records Tracking','Other']
 
+const TEMPLATES = [
+  { icon: '🔍', label: 'Research Report', title: 'Competitor Research Report', description: 'Research the top 10 competitors in my niche. Include their pricing, services, social media presence, and key differentiators. Compile into a structured report.', service_type: 'Web Research', priority: 'medium' },
+  { icon: '📱', label: 'Social Media', title: 'Social Media Content Pack', description: 'Create a week of social media content (7 posts) for Instagram and LinkedIn. Include captions, hashtags, and post timing recommendations.', service_type: 'Social Media Management', priority: 'medium' },
+  { icon: '📧', label: 'Inbox Cleanup', title: 'Email Inbox Organization', description: 'Organize and clean up my email inbox. Create folders/labels, unsubscribe from unwanted lists, and set up filters for better email management.', service_type: 'Email & Calendar Support', priority: 'low' },
+  { icon: '📊', label: 'Data Entry', title: 'Data Entry & Spreadsheet Setup', description: 'Enter data from provided documents into a spreadsheet. Set up formulas, formatting, and summary charts as needed.', service_type: 'Admin & Data Entry', priority: 'medium' },
+  { icon: '🗓️', label: 'Calendar Setup', title: 'Calendar & Schedule Management', description: 'Set up and organize my calendar for the month. Schedule meetings, set reminders, and block time for focused work. Share a structured weekly schedule.', service_type: 'Email & Calendar Support', priority: 'high' },
+  { icon: '💰', label: 'Payment Tracking', title: 'Invoice & Payment Reconciliation', description: 'Review and reconcile all outstanding invoices and payments for this month. Prepare a summary report of paid, pending, and overdue amounts.', service_type: 'Payment & Records Tracking', priority: 'high' },
+]
+
 function formatSize(bytes) {
   if (bytes < 1024) return `${bytes} B`
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
@@ -25,6 +34,7 @@ export default function NewTask() {
   const [form, setForm] = useState({ title: '', description: '', service_type: '', priority: 'medium', due_date: '' })
   const [selectedFiles, setSelectedFiles] = useState([])
   const [loading, setLoading] = useState(false)
+  const [showTemplates, setShowTemplates] = useState(true)
   const [uploadProgress, setUploadProgress] = useState('')
   const [dragOver, setDragOver] = useState(false)
   const fileInputRef = useRef(null)
@@ -75,6 +85,24 @@ export default function NewTask() {
       <Link to="/portal" className={styles.back}>← Back</Link>
       <h1>Submit a New Request</h1>
       <p>Fill in the details and Joy will get started as soon as possible.</p>
+
+      {showTemplates && (
+        <div className={styles.templatesBar}>
+          <div className={styles.templatesHeader}>
+            <span className={styles.templatesLabel}>Quick Templates</span>
+            <button type="button" className={styles.templatesDismiss} onClick={() => setShowTemplates(false)}>✕</button>
+          </div>
+          <div className={styles.templateCards}>
+            {TEMPLATES.map(t => (
+              <button key={t.label} type="button" className={styles.templateCard}
+                onClick={() => { set('title', t.title); set('description', t.description); set('service_type', t.service_type); set('priority', t.priority); setShowTemplates(false) }}>
+                <span className={styles.templateIcon}>{t.icon}</span>
+                <span className={styles.templateLabel}>{t.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.group}>

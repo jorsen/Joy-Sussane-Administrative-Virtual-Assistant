@@ -3,7 +3,16 @@ import { useParams, Link } from 'react-router-dom'
 import { useAuth } from './AuthContext'
 import { api } from './api'
 import { StatusBadge, PriorityBadge } from './Badges'
+import { timeAgo, downloadSingleIcs } from './utils'
 import styles from './TaskDetail.module.css'
+
+const ACTIVITY_ICONS = {
+  task_created: '🎯',
+  status_changed: '🔄',
+  message_sent: '💬',
+  file_added: '📎',
+  note_added: '🔒',
+}
 
 export default function TaskDetail() {
   const { id } = useParams()
@@ -17,9 +26,30 @@ export default function TaskDetail() {
   const [loading, setLoading] = useState(true)
   const msgEnd = useRef(null)
 
+  // Private notes state
+  const [notes, setNotes] = useState([])
+  const [noteText, setNoteText] = useState('')
+  const [noteLoading, setNoteLoading] = useState(false)
+
+  // Activity log state
+  const [activity, setActivity] = useState([])
+  const [activityOpen, setActivityOpen] = useState(true)
+
   useEffect(() => {
-    Promise.all([api.getTask(id), api.getMessages(id), api.getFiles(id)])
-      .then(([t, m, f]) => { setTask(t); setMessages(m); setFiles(f) })
+    Promise.all([
+      api.getTask(id),
+      api.getMessages(id),
+      api.getFiles(id),
+      api.getNotes(id),
+      api.getActivity(id),
+    ])
+      .then(([t, m, f, n, a]) => {
+        setTask(t)
+        setMessages(m)
+        setFiles(f)
+        setNotes(n)
+        setActivity(a)
+      })
       .finally(() => setLoading(false))
   }, [id])
 
@@ -46,6 +76,24 @@ export default function TaskDetail() {
     setTask(updated)
   }
 
+  async function addNote(e) {
+    e.preventDefault()
+    if (!noteText.trim()) return
+    setNoteLoading(true)
+    try {
+      const note = await api.addNote(id, noteText)
+      setNotes(n => [...n, note])
+      setNoteText('')
+    } finally {
+      setNoteLoading(false)
+    }
+  }
+
+  async function deleteNote(noteId) {
+    await api.deleteNote(id, noteId)
+    setNotes(n => n.filter(note => note.id !== noteId))
+  }
+
   if (loading) return <div className={styles.loading}>Loading task...</div>
   if (!task) return <div className={styles.loading}>Task not found.</div>
 
@@ -61,6 +109,15 @@ export default function TaskDetail() {
             <PriorityBadge priority={task.priority} />
             {task.service_type && <span className={styles.serviceTag}>{task.service_type}</span>}
             {task.client_name && <span className={styles.client}>👤 {task.client_name}</span>}
+            {task.due_date && (
+              <button
+                type="button"
+                className={styles.icsBtn}
+                onClick={() => downloadSingleIcs(task)}
+              >
+                📅 Export to Calendar
+              </button>
+            )}
           </div>
         </div>
         {user?.role === 'admin' && (
@@ -117,6 +174,77 @@ export default function TaskDetail() {
             </form>
           )}
         </div>
+      </div>
+
+      {/* Private Notes (admin only) */}
+      {user?.role === 'admin' && (
+        <div className={`${styles.card} ${styles.notesCard}`}>
+          <h3>🔒 Private Notes</h3>
+          {notes.length === 0 && <p className={styles.empty}>No private notes yet.</p>}
+          <div className={styles.noteList}>
+            {notes.map(note => (
+              <div key={note.id} className={styles.noteItem}>
+                <p className={styles.noteContent}>{note.content}</p>
+                <div className={styles.noteMeta}>
+                  <span>{timeAgo(note.created_at)}</span>
+                  <button
+                    type="button"
+                    className={styles.deleteNoteBtn}
+                    onClick={() => deleteNote(note.id)}
+                    aria-label="Delete note"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <form onSubmit={addNote} className={styles.noteForm}>
+            <textarea
+              value={noteText}
+              onChange={e => setNoteText(e.target.value)}
+              placeholder="Write a private note visible only to admins..."
+              rows={3}
+              required
+            />
+            <button type="submit" disabled={noteLoading}>
+              {noteLoading ? 'Adding…' : 'Add Note'}
+            </button>
+          </form>
+        </div>
+      )}
+
+      {/* Activity Log */}
+      <div className={`${styles.card} ${styles.activityCard}`}>
+        <button
+          type="button"
+          className={styles.activityToggle}
+          onClick={() => setActivityOpen(o => !o)}
+          aria-expanded={activityOpen}
+        >
+          <span>🕓 Activity Log</span>
+          <span className={styles.toggleChevron}>{activityOpen ? '▲' : '▼'}</span>
+        </button>
+
+        {activityOpen && (
+          <div className={styles.timeline}>
+            {activity.length === 0 && <p className={styles.empty}>No activity recorded yet.</p>}
+            {activity.map((item, idx) => (
+              <div key={item.id ?? idx} className={styles.timelineItem}>
+                <div className={styles.timelineDot}>
+                  {ACTIVITY_ICONS[item.action] ?? '📋'}
+                </div>
+                <div className={styles.timelineBody}>
+                  <span className={styles.timelineDetail}>{item.detail}</span>
+                  {item.actor_name && (
+                    <span className={styles.timelineActor}> by {item.actor_name}</span>
+                  )}
+                </div>
+                <span className={styles.timelineTime}>{timeAgo(item.created_at)}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

@@ -29,6 +29,25 @@ export const api = {
   getFiles: (taskId) => req('GET', `/tasks/${taskId}/files`),
   addFile: (taskId, data) => req('POST', `/tasks/${taskId}/files`, data),
 
+  getInvoices: () => req('GET', '/invoices'),
+  createInvoice: (data) => req('POST', '/invoices', data),
+  updateInvoice: (id, data) => req('PATCH', `/invoices/${id}`, data),
+  deleteInvoice: (id) => req('DELETE', `/invoices/${id}`),
+
+  getNotes: (taskId) => req('GET', `/tasks/${taskId}/notes`),
+  addNote: (taskId, content) => req('POST', `/tasks/${taskId}/notes`, { content }),
+  deleteNote: (taskId, noteId) => req('DELETE', `/tasks/${taskId}/notes/${noteId}`),
+
+  getActivity: (taskId) => req('GET', `/tasks/${taskId}/activity`),
+
+  getNotifications: () => req('GET', '/notifications'),
+  markRead: (id) => req('PATCH', `/notifications/${id}/read`),
+  markAllRead: () => req('PATCH', '/notifications/read-all'),
+
+  search: (q) => req('GET', `/search?q=${encodeURIComponent(q)}`),
+
+  getAnalytics: () => req('GET', '/admin/analytics'),
+
   getClients: () => req('GET', '/admin/clients'),
   setClientStatus: (id, isActive) => req('PATCH', `/admin/clients/${id}/status`, { is_active: isActive }),
   deleteClient: (id) => req('DELETE', `/admin/clients/${id}`),

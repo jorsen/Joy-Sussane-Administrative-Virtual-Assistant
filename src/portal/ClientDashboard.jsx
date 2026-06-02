@@ -41,9 +41,31 @@ export default function ClientDashboard() {
       <div className={styles.section}>
         <h2>Recent Tasks</h2>
         {loading ? <p className={styles.empty}>Loading...</p> : tasks.length === 0 ? (
-          <div className={styles.emptyState}>
-            <p>No tasks yet.</p>
-            <Link to="/portal/tasks/new" className={styles.newBtn}>Submit your first request →</Link>
+          <div className={styles.onboarding}>
+            <div className={styles.onboardingHeader}>
+              <span className={styles.onboardingEmoji}>👋</span>
+              <div>
+                <h3>Welcome! Let's get you started.</h3>
+                <p>Here are a few things to do first:</p>
+              </div>
+            </div>
+            <div className={styles.checkList}>
+              {[
+                { icon: '✅', text: 'Account created', done: true },
+                { icon: '📝', text: 'Submit your first request', done: false, link: '/portal/tasks/new' },
+                { icon: '💬', text: 'Chat with Joy about your needs', done: false },
+                { icon: '📅', text: 'Set due dates on your tasks', done: false },
+              ].map((item, i) => (
+                <div key={i} className={`${styles.checkItem} ${item.done ? styles.checkDone : ''}`}>
+                  <span className={styles.checkIcon}>{item.done ? '✅' : '○'}</span>
+                  {item.link
+                    ? <Link to={item.link} className={styles.checkLink}>{item.text}</Link>
+                    : <span className={styles.checkText}>{item.text}</span>
+                  }
+                </div>
+              ))}
+            </div>
+            <Link to="/portal/tasks/new" className={styles.newBtn} style={{display:'inline-block',marginTop:'16px'}}>Submit your first request →</Link>
           </div>
         ) : (
           <div className={styles.taskList}>
