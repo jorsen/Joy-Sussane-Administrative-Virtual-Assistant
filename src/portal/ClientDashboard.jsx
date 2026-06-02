@@ -32,10 +32,10 @@ export default function ClientDashboard() {
       </div>
 
       <div className={styles.statsGrid}>
-        <div className={styles.stat}><strong>{stats.total}</strong><span>Total Tasks</span></div>
-        <div className={`${styles.stat} ${styles.yellow}`}><strong>{stats.pending}</strong><span>Pending</span></div>
-        <div className={`${styles.stat} ${styles.blue}`}><strong>{stats.active}</strong><span>In Progress</span></div>
-        <div className={`${styles.stat} ${styles.green}`}><strong>{stats.done}</strong><span>Completed</span></div>
+        <div className={`${styles.stat} ${styles.statPurple}`}><div className={styles.statIcon}>📋</div><strong>{stats.total}</strong><span>Total Tasks</span></div>
+        <div className={`${styles.stat} ${styles.statYellow}`}><div className={styles.statIcon}>🕐</div><strong>{stats.pending}</strong><span>Pending</span></div>
+        <div className={`${styles.stat} ${styles.statBlue}`}><div className={styles.statIcon}>⚡</div><strong>{stats.active}</strong><span>In Progress</span></div>
+        <div className={`${styles.stat} ${styles.statGreen}`}><div className={styles.statIcon}>✅</div><strong>{stats.done}</strong><span>Completed</span></div>
       </div>
 
       <div className={styles.section}>
@@ -71,7 +71,7 @@ export default function ClientDashboard() {
           <div className={styles.taskList}>
             {tasks.slice(0, 5).map(task => (
               <Link to={`/portal/tasks/${task.id}`} key={task.id} className={styles.taskRow}>
-                <div>
+                <div className={styles.taskLeft}>
                   <strong>{task.title}</strong>
                   <span>{task.service_type}</span>
                 </div>

@@ -1,18 +1,25 @@
 .wrap {
-  position: relative;
-  display: inline-block;
+  position: static;
+  display: block;
+  width: 100%;
 }
 
 .bell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
   background: none;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.1);
   cursor: pointer;
-  font-size: 20px;
+  font-size: 14px;
   position: relative;
-  padding: 4px 8px;
+  padding: 9px 12px;
   border-radius: 8px;
   transition: background 0.15s;
-  line-height: 1;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 4px;
+  text-align: left;
 }
 
 .bell:hover {
@@ -38,15 +45,15 @@
 }
 
 .dropdown {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 8px);
+  position: fixed;
+  left: 268px;
+  bottom: 90px;
   width: 320px;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
   border: 1px solid #e5e7eb;
-  z-index: 200;
+  z-index: 500;
   overflow: hidden;
 }
 

@@ -84,7 +84,7 @@ export default function NotificationBell() {
         onClick={() => setOpen((prev) => !prev)}
         aria-label={`Notifications${unreadCount > 0 ? `, ${unreadCount} unread` : ""}`}
       >
-        🔔
+        🔔 Notifications
         {unreadCount > 0 && (
           <span className={styles.badge}>
             {unreadCount > 99 ? "99+" : unreadCount}
