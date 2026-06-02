@@ -2,15 +2,6 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; color: #0f0a1e; background: #fff; line-height: 1.7; font-size: 16px; overflow-x: hidden; }
 
-/* ── Portal default (always dark, matching landing page hero) ── */
-[class*="layout"] { color: #e8e3ff; }
-[class*="layout"] h1, [class*="layout"] h2, [class*="layout"] h3 { color: #fff; }
-[class*="layout"] strong { color: #fff; }
-[class*="layout"] p, [class*="layout"] span { color: inherit; }
-[class*="layout"] input, [class*="layout"] select, [class*="layout"] textarea { color: #fff !important; background: #2a2550 !important; border-color: rgba(255,255,255,0.12) !important; }
-[class*="layout"] input::placeholder, [class*="layout"] textarea::placeholder { color: rgba(255,255,255,0.35) !important; }
-[class*="layout"] label { color: rgba(255,255,255,0.8) !important; }
-[class*="layout"] input:focus, [class*="layout"] select:focus, [class*="layout"] textarea:focus { border-color: #6d28d9 !important; box-shadow: 0 0 0 3px rgba(109,40,217,0.2) !important; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
