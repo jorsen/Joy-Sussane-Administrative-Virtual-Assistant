@@ -1,0 +1,24 @@
+.why { background: #f8f7ff; padding: 60px 0; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.item {
+  background: #fff;
+  padding: 36px 28px;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+  cursor: default;
+}
+.item:first-child { border-radius: 16px 0 0 16px; }
+.item:last-child { border-radius: 0 16px 16px 0; }
+.item:hover { background: #6d28d9; }
+.item:hover .icon, .item:hover h3, .item:hover p { color: #fff; }
+.icon { font-size: 32px; margin-bottom: 12px; }
+h3 { font-size: 16px; font-weight: 700; color: #0f0a1e; margin-bottom: 8px; transition: color 0.2s; }
+p { font-size: 13px; color: #6b7280; line-height: 1.6; transition: color 0.2s; }
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .item:first-child { border-radius: 16px 0 0 0; }
+  .item:nth-child(2) { border-radius: 0 16px 0 0; }
+  .item:nth-child(3) { border-radius: 0 0 0 16px; }
+  .item:last-child { border-radius: 0 0 16px 0; }
+}

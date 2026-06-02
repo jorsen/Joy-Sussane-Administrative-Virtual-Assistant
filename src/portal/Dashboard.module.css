@@ -1,0 +1,24 @@
+.header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+.header h1 { font-family:'Sora',sans-serif; font-size: 26px; font-weight: 800; color: #0f0a1e; margin-bottom: 4px; }
+.header p { font-size: 14px; color: #6b7280; }
+.newBtn { background: linear-gradient(135deg,#6d28d9,#7c3aed); color: #fff; padding: 11px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: all 0.2s; }
+.newBtn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(109,40,217,0.35); }
+.statsGrid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 36px; }
+.stat { background: #fff; border-radius: 16px; padding: 24px; border: 1px solid #e5e7eb; }
+.stat strong { display: block; font-family:'Sora',sans-serif; font-size: 32px; font-weight: 800; color: #0f0a1e; margin-bottom: 4px; }
+.stat span { font-size: 13px; color: #6b7280; }
+.yellow strong { color: #d97706; }
+.blue strong { color: #2563eb; }
+.green strong { color: #16a34a; }
+.section h2 { font-family:'Sora',sans-serif; font-size: 18px; font-weight: 700; color: #0f0a1e; margin-bottom: 16px; }
+.taskList { display: flex; flex-direction: column; gap: 2px; }
+.taskRow { display: flex; align-items: center; justify-content: space-between; background: #fff; padding: 16px 20px; border-radius: 12px; text-decoration: none; transition: all 0.2s; border: 1px solid #e5e7eb; gap: 16px; flex-wrap: wrap; }
+.taskRow:hover { border-color: #6d28d9; box-shadow: 0 2px 12px rgba(109,40,217,0.1); }
+.taskRow strong { display: block; font-size: 15px; font-weight: 600; color: #0f0a1e; margin-bottom: 2px; }
+.taskRow span { font-size: 12px; color: #6b7280; }
+.taskMeta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.date { font-size: 12px; color: #9ca3af; }
+.empty { color: #6b7280; font-size: 14px; }
+.emptyState { text-align: center; padding: 48px; background: #fff; border-radius: 16px; border: 1px solid #e5e7eb; }
+.emptyState p { color: #6b7280; margin-bottom: 16px; }
+@media (max-width: 640px) { .statsGrid { grid-template-columns: repeat(2,1fr); } }

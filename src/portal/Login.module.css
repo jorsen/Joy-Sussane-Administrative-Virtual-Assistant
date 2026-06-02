@@ -1,0 +1,20 @@
+.page { min-height: 100vh; background: #0c0a1e; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.card { background: #fff; border-radius: 24px; padding: 48px; width: 100%; max-width: 440px; }
+.back { font-size: 13px; color: #6b7280; text-decoration: none; display: block; margin-bottom: 24px; }
+.back:hover { color: #6d28d9; }
+.logo { font-family: 'Sora',sans-serif; font-size: 28px; font-weight: 800; color: #0f0a1e; margin-bottom: 12px; }
+.logo span { color: #6d28d9; }
+.card h2 { font-family: 'Sora',sans-serif; font-size: 22px; font-weight: 800; color: #0f0a1e; margin-bottom: 4px; }
+.card p { font-size: 14px; color: #6b7280; margin-bottom: 28px; }
+.tabs { display: flex; background: #f8f7ff; border-radius: 10px; padding: 4px; margin-bottom: 24px; }
+.tabs button { flex: 1; padding: 8px; border: none; background: none; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b7280; cursor: pointer; transition: all 0.2s; }
+.tabs .active { background: #fff; color: #6d28d9; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.group { display: flex; flex-direction: column; gap: 6px; }
+.group label { font-size: 13px; font-weight: 600; color: #0f0a1e; }
+.group input { padding: 12px 16px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: 15px; font-family: 'Inter',sans-serif; outline: none; background: #f8f7ff; transition: border-color 0.2s; }
+.group input:focus { border-color: #6d28d9; background: #fff; box-shadow: 0 0 0 3px rgba(109,40,217,0.1); }
+.error { font-size: 13px; color: #dc2626; background: #fef2f2; padding: 10px 14px; border-radius: 8px; }
+.submit { padding: 14px; border: none; border-radius: 10px; background: linear-gradient(135deg,#6d28d9,#7c3aed); color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.submit:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(109,40,217,0.4); }
+.submit:disabled { opacity: 0.6; cursor: not-allowed; }

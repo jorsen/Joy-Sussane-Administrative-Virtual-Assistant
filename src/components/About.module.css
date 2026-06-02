@@ -1,0 +1,20 @@
+.about { background: #fff; }
+.inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.left p { color: #374151; margin-bottom: 16px; line-height: 1.8; }
+.left strong { color: #0f0a1e; font-weight: 600; }
+.right { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 24px;
+  background: #f8f7ff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:hover { border-color: #6d28d9; box-shadow: 0 4px 24px rgba(109,40,217,0.1); }
+.cardIcon { font-size: 28px; }
+.card strong { font-size: 14px; font-weight: 700; color: #0f0a1e; }
+.card p { font-size: 12px; color: #6b7280; margin: 0; }
+
+@media (max-width: 960px) { .inner { grid-template-columns: 1fr; gap: 48px; } }
+@media (max-width: 640px) { .right { grid-template-columns: 1fr; } }

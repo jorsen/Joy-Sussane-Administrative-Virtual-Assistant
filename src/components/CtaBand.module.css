@@ -1,0 +1,13 @@
+.band { background: linear-gradient(135deg,#4c1d95,#6d28d9,#2563eb); padding: 64px 0; }
+.inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.inner h2 { font-family:'Sora',sans-serif; font-size: clamp(22px,3vw,32px); font-weight: 800; color: #fff; margin-bottom: 4px; }
+.inner p { font-size: 16px; color: rgba(255,255,255,0.75); }
+.btn {
+  background: #fff; color: #6d28d9;
+  padding: 14px 28px; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  text-decoration: none; white-space: nowrap;
+  transition: all 0.2s;
+}
+.btn:hover { background: #ede9fd; transform: translateY(-2px); }
+@media (max-width: 640px) { .inner { flex-direction: column; text-align: center; } }

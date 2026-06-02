@@ -1,0 +1,16 @@
+.section { background: #fff; padding: 100px 0; }
+.grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.pill {
+  padding: 11px 22px;
+  background: #f8f7ff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 100px;
+  font-size: 14px; font-weight: 500; color: #374151;
+  transition: all 0.2s; cursor: default;
+}
+.pill:hover {
+  background: #6d28d9; color: #fff;
+  border-color: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(109,40,217,0.3);
+}

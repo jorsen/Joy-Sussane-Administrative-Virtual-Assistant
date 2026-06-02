@@ -1,0 +1,35 @@
+.section { background: #fff; padding: 100px 0; }
+.grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; }
+.info { display: flex; flex-direction: column; gap: 28px; }
+.item { display: flex; gap: 16px; align-items: flex-start; }
+.iconWrap { width: 44px; height: 44px; background: #ede9fd; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.item strong { display: block; font-size: 13px; font-weight: 700; color: #0f0a1e; margin-bottom: 3px; }
+.item a, .item span { font-size: 14px; color: #6b7280; word-break: break-word; text-decoration: none; }
+.item a:hover { color: #6d28d9; text-decoration: underline; }
+.guarantee { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 16px 20px; font-size: 14px; color: #15803d; line-height: 1.6; }
+.form { display: flex; flex-direction: column; gap: 20px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.group { display: flex; flex-direction: column; gap: 7px; }
+.group label { font-size: 13px; font-weight: 600; color: #0f0a1e; }
+.group input, .group select, .group textarea {
+  padding: 13px 16px; border: 1.5px solid #e5e7eb; border-radius: 10px;
+  font-size: 15px; font-family: 'Inter',sans-serif; color: #0f0a1e;
+  background: #f8f7ff; outline: none; resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.group input:focus, .group select:focus, .group textarea:focus {
+  border-color: #6d28d9; background: #fff;
+  box-shadow: 0 0 0 3px rgba(109,40,217,0.1);
+}
+.submit {
+  padding: 14px 28px; border-radius: 10px; border: none;
+  background: linear-gradient(135deg,#6d28d9,#7c3aed);
+  color: #fff; font-size: 15px; font-weight: 600;
+  cursor: pointer; width: 100%;
+  box-shadow: 0 4px 20px rgba(109,40,217,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(109,40,217,0.45); }
+.success { font-size: 14px; color: #15803d; font-weight: 600; text-align: center; padding: 14px; background: #f0fdf4; border-radius: 10px; }
+@media (max-width: 960px) { .grid { grid-template-columns: 1fr; gap: 48px; } }
+@media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
