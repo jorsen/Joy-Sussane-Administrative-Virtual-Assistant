@@ -10,14 +10,14 @@
   gap: 8px;
   width: 100%;
   background: none;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(255,255,255,0.07);
   cursor: pointer;
   font-size: 14px;
   position: relative;
   padding: 9px 12px;
   border-radius: 8px;
   transition: background 0.15s;
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
   margin-bottom: 4px;
   text-align: left;
 }
@@ -49,10 +49,10 @@
   left: 268px;
   bottom: 90px;
   width: 320px;
-  background: #fff;
+  background: #16122e;
   border-radius: 16px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(255,255,255,0.07);
   z-index: 500;
   overflow: hidden;
 }
@@ -62,13 +62,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 14px 16px;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .dropTitle {
   font-size: 14px;
   font-weight: 700;
-  color: #0f0a1e;
+  color: #f0eeff;
 }
 
 .markAllBtn {
@@ -116,7 +116,7 @@
 }
 
 .unread {
-  background: #f9fafb;
+  background: #0f0d1f;
 }
 
 .dot {
@@ -137,7 +137,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: #0f0a1e;
+  color: #f0eeff;
   margin-bottom: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -146,12 +146,12 @@
 
 .itemContent span {
   font-size: 11px;
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
 }
 
 .empty {
   padding: 32px;
   text-align: center;
   font-size: 13px;
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
 }

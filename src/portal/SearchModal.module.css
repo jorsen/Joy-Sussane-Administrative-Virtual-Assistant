@@ -11,7 +11,7 @@
 }
 
 .box {
-  background: #fff;
+  background: #16122e;
   border-radius: 16px;
   width: 100%;
   max-width: 560px;
@@ -24,13 +24,13 @@
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .searchIcon {
   font-size: 18px;
   flex-shrink: 0;
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
   line-height: 1;
 }
 
@@ -40,17 +40,17 @@
   outline: none;
   font-size: 16px;
   font-family: Inter, sans-serif;
-  color: #0f0a1e;
+  color: #f0eeff;
   background: transparent;
 }
 
 .input::placeholder {
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
 }
 
 .hint {
   font-size: 11px;
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -93,7 +93,7 @@
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: #0f0a1e;
+  color: #f0eeff;
   margin-bottom: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -102,22 +102,22 @@
 
 .resultInfo span {
   font-size: 12px;
-  color: #6b7280;
+  color: rgba(255,255,255,0.4);
 }
 
 .empty {
   padding: 32px;
   text-align: center;
   font-size: 14px;
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
 }
 
 .footer {
   padding: 10px 20px;
-  background: #f9fafb;
-  border-top: 1px solid #f3f4f6;
+  background: #0f0d1f;
+  border-top: 1px solid rgba(255,255,255,0.05);
   font-size: 11px;
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
   display: flex;
   gap: 16px;
 }

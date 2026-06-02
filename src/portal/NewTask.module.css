@@ -1,36 +1,36 @@
 .page { max-width: 680px; }
 .back { font-size: 13px; color: #6d28d9; text-decoration: none; display: block; margin-bottom: 20px; }
-.page h1 { font-family:'Sora',sans-serif; font-size: 24px; font-weight: 800; color: #0f0a1e; margin-bottom: 6px; }
-.page p { font-size: 14px; color: #6b7280; margin-bottom: 32px; }
-.form { background: #fff; border-radius: 20px; padding: 36px; border: 1px solid #e5e7eb; display: flex; flex-direction: column; gap: 20px; }
+.page h1 { font-family:'Sora',sans-serif; font-size: 24px; font-weight: 800; color: #f0eeff; margin-bottom: 6px; }
+.page p { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 32px; }
+.form { background: #16122e; border-radius: 20px; padding: 36px; border: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; gap: 20px; }
 .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
 .group { display: flex; flex-direction: column; gap: 7px; }
-.group label { font-size: 13px; font-weight: 600; color: #0f0a1e; }
-.group input, .group select, .group textarea { padding: 12px 16px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: 15px; font-family:'Inter',sans-serif; background: #f9fafb; outline: none; resize: vertical; transition: border-color 0.2s; }
-.group input:focus, .group select:focus, .group textarea:focus { border-color: #6d28d9; background: #fff; box-shadow: 0 0 0 3px rgba(109,40,217,0.1); }
+.group label { font-size: 13px; font-weight: 600; color: #f0eeff; }
+.group input, .group select, .group textarea { padding: 12px 16px; border: 1.5px solid rgba(255,255,255,0.07); border-radius: 10px; font-size: 15px; font-family:'Inter',sans-serif; background: #0f0d1f; outline: none; resize: vertical; transition: border-color 0.2s; }
+.group input:focus, .group select:focus, .group textarea:focus { border-color: #6d28d9; background: #16122e; box-shadow: 0 0 0 3px rgba(109,40,217,0.1); }
 .submit { padding: 14px; border: none; border-radius: 10px; background: linear-gradient(135deg,#6d28d9,#5b21b6); color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
 .submit:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(109,40,217,0.4); }
 .submit:disabled { opacity: 0.6; cursor: not-allowed; }
-.dropzone { border: 2px dashed #c4b5fd; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; background: #faf8ff; transition: all 0.2s; user-select: none; }
+.dropzone { border: 2px dashed #c4b5fd; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; background: #1a1738; transition: all 0.2s; user-select: none; }
 .dropzone:hover, .dragOver { border-color: #6d28d9; background: #ede9fd; }
 .dropIcon { font-size: 28px; }
-.dropText { font-size: 14px; color: #374151; }
+.dropText { font-size: 14px; color: rgba(255,255,255,0.8); }
 .dropText u { color: #6d28d9; }
-.dropHint { font-size: 12px; color: #9ca3af; }
+.dropHint { font-size: 12px; color: rgba(255,255,255,0.3); }
 .hiddenInput { display: none; }
 .fileList { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.fileItem { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f9fafb; border-radius: 10px; border: 1px solid #ddd6fe; }
+.fileItem { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #0f0d1f; border-radius: 10px; border: 1px solid #ddd6fe; }
 .fileIcon { font-size: 18px; flex-shrink: 0; }
-.fileName { font-size: 13px; font-weight: 500; color: #0f0a1e; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.fileSize { font-size: 12px; color: #9ca3af; flex-shrink: 0; }
-.fileRemove { background: none; border: none; cursor: pointer; color: #9ca3af; font-size: 13px; padding: 2px 4px; line-height: 1; flex-shrink: 0; transition: color 0.15s; }
+.fileName { font-size: 13px; font-weight: 500; color: #f0eeff; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fileSize { font-size: 12px; color: rgba(255,255,255,0.3); flex-shrink: 0; }
+.fileRemove { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.3); font-size: 13px; padding: 2px 4px; line-height: 1; flex-shrink: 0; transition: color 0.15s; }
 .fileRemove:hover { color: #ef4444; }
-.templatesBar { background: #fff; border-radius: 16px; border: 1px solid #ddd6fe; padding: 16px 20px; margin-bottom: 20px; }
+.templatesBar { background: #16122e; border-radius: 16px; border: 1px solid #ddd6fe; padding: 16px 20px; margin-bottom: 20px; }
 .templatesHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .templatesLabel { font-size: 13px; font-weight: 700; color: #6d28d9; }
-.templatesDismiss { background: none; border: none; cursor: pointer; color: #9ca3af; font-size: 14px; padding: 2px; }
+.templatesDismiss { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.3); font-size: 14px; padding: 2px; }
 .templateCards { display: flex; gap: 8px; flex-wrap: wrap; }
-.templateCard { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1.5px solid #e5e7eb; border-radius: 100px; background: #f9fafb; font-size: 13px; font-weight: 600; color: #374151; cursor: pointer; transition: all 0.2s; }
+.templateCard { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1.5px solid rgba(255,255,255,0.07); border-radius: 100px; background: #0f0d1f; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); cursor: pointer; transition: all 0.2s; }
 .templateCard:hover { border-color: #6d28d9; color: #6d28d9; background: #ede9fd; }
 .templateIcon { font-size: 16px; }
 .templateLabel { white-space: nowrap; }

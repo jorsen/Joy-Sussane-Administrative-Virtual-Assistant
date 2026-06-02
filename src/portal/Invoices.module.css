@@ -1,7 +1,7 @@
 /* ── Page shell ───────────────────────────────────────────────────────────── */
 .page { max-width: 1000px; }
 
-.loading { color: #6b7280; font-size: 14px; padding: 40px; }
+.loading { color: rgba(255,255,255,0.4); font-size: 14px; padding: 40px; }
 
 /* ── Page header ─────────────────────────────────────────────────────────── */
 .pageHeader {
@@ -17,13 +17,13 @@
   font-family: 'Sora', sans-serif;
   font-size: 26px;
   font-weight: 800;
-  color: #0f0a1e;
+  color: #f0eeff;
   margin-bottom: 4px;
 }
 
 .pageHeader p {
   font-size: 13px;
-  color: #6b7280;
+  color: rgba(255,255,255,0.4);
 }
 
 .newBtn {
@@ -61,17 +61,17 @@
 .filter {
   padding: 7px 18px;
   border-radius: 100px;
-  border: 1.5px solid #e5e7eb;
-  background: #fff;
+  border: 1.5px solid rgba(255,255,255,0.07);
+  background: #16122e;
   font-size: 13px;
   font-weight: 600;
-  color: #6b7280;
+  color: rgba(255,255,255,0.4);
   cursor: pointer;
   transition: all 0.15s;
   font-family: 'Inter', sans-serif;
 }
 
-.filter:hover { border-color: #6d28d9; color: #6d28d9; background: #f9fafb; }
+.filter:hover { border-color: #6d28d9; color: #6d28d9; background: #0f0d1f; }
 
 .filterActive {
   background: #6d28d9;
@@ -81,28 +81,28 @@
 
 .filterActive:hover { background: #5b21b6; border-color: #5b21b6; color: #fff; }
 
-.count { font-size: 13px; color: #9ca3af; }
+.count { font-size: 13px; color: rgba(255,255,255,0.3); }
 
 /* ── Table ────────────────────────────────────────────────────────────────── */
 .tableWrap {
-  background: #fff;
+  background: #16122e;
   border-radius: 18px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(255,255,255,0.07);
   overflow: hidden;
 }
 
 .table { width: 100%; border-collapse: collapse; }
 
 .table thead tr {
-  background: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
+  background: #0f0d1f;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
 .table th {
   padding: 12px 20px;
   font-size: 12px;
   font-weight: 700;
-  color: #6b7280;
+  color: rgba(255,255,255,0.4);
   text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -111,17 +111,17 @@
 
 .table td {
   padding: 16px 20px;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
   vertical-align: middle;
   font-size: 14px;
-  color: #0f0a1e;
+  color: #f0eeff;
 }
 
 .table tbody tr:last-child td { border-bottom: none; }
 
 .table tbody tr { transition: background 0.15s; }
 
-.table tbody tr:hover { background: #f9fafb; }
+.table tbody tr:hover { background: #0f0d1f; }
 
 /* ── Cell helpers ─────────────────────────────────────────────────────────── */
 .clientCell {
@@ -147,14 +147,14 @@
 .clientName {
   font-weight: 600;
   font-size: 14px;
-  color: #0f0a1e;
+  color: #f0eeff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .titleCell {
-  color: #374151;
+  color: rgba(255,255,255,0.8);
   max-width: 220px;
   white-space: nowrap;
   overflow: hidden;
@@ -164,11 +164,11 @@
 .amount {
   font-weight: 700;
   font-size: 15px;
-  color: #0f0a1e;
+  color: #f0eeff;
   white-space: nowrap;
 }
 
-.dueDate { font-size: 13px; color: #6b7280; white-space: nowrap; }
+.dueDate { font-size: 13px; color: rgba(255,255,255,0.4); white-space: nowrap; }
 
 /* ── Status badges ────────────────────────────────────────────────────────── */
 .statusBadge {
@@ -180,7 +180,7 @@
   white-space: nowrap;
 }
 
-.statusDraft   { background: #f3f4f6; color: #6b7280; }
+.statusDraft   { background: #1e1a38; color: rgba(255,255,255,0.4); }
 .statusSent    { background: #dbeafe; color: #1d4ed8; }
 .statusPaid    { background: #dcfce7; color: #15803d; }
 .statusOverdue { background: #fee2e2; color: #dc2626; }
@@ -192,9 +192,9 @@
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  border: 1.5px solid #e5e7eb;
-  background: #fff;
-  color: #6b7280;
+  border: 1.5px solid rgba(255,255,255,0.07);
+  background: #16122e;
+  color: rgba(255,255,255,0.4);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +203,7 @@
   flex-shrink: 0;
 }
 
-.iconBtn:hover { border-color: #6d28d9; color: #6d28d9; background: #f9fafb; }
+.iconBtn:hover { border-color: #6d28d9; color: #6d28d9; background: #0f0d1f; }
 
 .iconBtnGreen { border-color: #bbf7d0; color: #15803d; background: #f0fdf4; }
 .iconBtnGreen:hover { border-color: #15803d; background: #dcfce7; color: #15803d; }
@@ -218,10 +218,10 @@
   align-items: center;
   gap: 12px;
   padding: 64px 40px;
-  background: #fff;
+  background: #16122e;
   border-radius: 18px;
-  border: 1px solid #e5e7eb;
-  color: #9ca3af;
+  border: 1px solid rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.3);
 }
 
 .emptyState span { font-size: 40px; }
@@ -241,7 +241,7 @@
 }
 
 .modal {
-  background: #fff;
+  background: #16122e;
   border-radius: 20px;
   padding: 36px;
   width: 100%;
@@ -255,7 +255,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 20px;
   font-weight: 800;
-  color: #0f0a1e;
+  color: #f0eeff;
   margin-bottom: 24px;
 }
 
@@ -273,13 +273,13 @@
 .formGroup label {
   font-size: 13px;
   font-weight: 600;
-  color: #0f0a1e;
+  color: #f0eeff;
   font-family: 'Inter', sans-serif;
 }
 
 .optional {
   font-weight: 400;
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
   font-size: 12px;
 }
 
@@ -287,12 +287,12 @@
 .formGroup select,
 .formGroup textarea {
   padding: 12px 16px;
-  border: 1.5px solid #e5e7eb;
+  border: 1.5px solid rgba(255,255,255,0.07);
   border-radius: 10px;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
-  color: #0f0a1e;
-  background: #f9fafb;
+  color: #f0eeff;
+  background: #0f0d1f;
   outline: none;
   resize: vertical;
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
@@ -304,13 +304,13 @@
 .formGroup select:focus,
 .formGroup textarea:focus {
   border-color: #6d28d9;
-  background: #fff;
+  background: #16122e;
   box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
 }
 
 .formGroup input::placeholder,
 .formGroup textarea::placeholder {
-  color: #9ca3af;
+  color: rgba(255,255,255,0.3);
 }
 
 /* ── Modal action buttons ─────────────────────────────────────────────────── */
@@ -323,18 +323,18 @@
 .cancelBtn {
   flex: 1;
   padding: 12px;
-  border: 1.5px solid #e5e7eb;
-  background: #fff;
+  border: 1.5px solid rgba(255,255,255,0.07);
+  background: #16122e;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 600;
-  color: #6b7280;
+  color: rgba(255,255,255,0.4);
   cursor: pointer;
   font-family: 'Inter', sans-serif;
   transition: border-color 0.2s, color 0.2s;
 }
 
-.cancelBtn:hover:not(:disabled) { border-color: #374151; color: #374151; }
+.cancelBtn:hover:not(:disabled) { border-color: rgba(255,255,255,0.8); color: rgba(255,255,255,0.8); }
 
 .cancelBtn:disabled { opacity: 0.5; cursor: not-allowed; }
 
